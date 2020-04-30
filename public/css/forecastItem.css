@@ -1,0 +1,39 @@
+#forecastItemContainer {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tempText {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#titleText {
+    font-weight: bold;
+}
+
+#forecastItemTitle {
+    background-color: rgb(176, 241, 176);
+    width: 100%;
+    margin: 0 auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* padding-left: 10px; */
+    padding: 10px;
+    padding-left: 20px;
+}
+
+#forecastItemBody {
+    background-color: rgb(230, 230, 230);
+    width: 100%;
+    margin: 0 auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+}
+
+.forecastItemInnerBody {
+    padding: 10px;
+}

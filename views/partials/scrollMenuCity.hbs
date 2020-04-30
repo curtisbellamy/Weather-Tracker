@@ -1,0 +1,17 @@
+{{#each data}}
+<div class="scrollMenuCityContainer">
+    <div class="row scrollMenuCityInnerContainer">
+        <div class="col-9 cityInnerLabel">
+            <h5>{{this.city}} - {{this.province}}</h5>
+
+        </div>
+        <div class="col-3">
+            <form method="GET" action="getWeather/{{this.city}}/{{this.province}}">
+                <button type="submit" class="btn btn-success innerBtn" onclick="load()">
+                    View
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{{/each}}

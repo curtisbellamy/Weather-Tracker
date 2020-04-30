@@ -1,0 +1,85 @@
+{{#if data}}
+
+<body onload="centerMap('{{data.currentRegion}}')">
+    <div id="cityForecastContainer" class="container-fluid">
+
+        <div class="row cityForecastInnerContainer">
+
+            <div id="cityInfo" class="col-3">
+                <h3>Weather Information For:</h3>
+                <h1 id="region">{{data.currentRegion}}</h1>
+                <div id="map"></div>
+                <form method="GET" action="/">
+                    <button id="optionBtn" type="submit" class="btn btn-outline-primary">Back to Dashboard</button>
+
+                </form>
+                <form method="POST" action="/removeCity/{{data.currentRegion}}"
+                    onsubmit="removeCity('{{data.currentRegion}}')">
+                    <button id="optionBtn" type="submit" class="btn btn-outline-danger">Remove City</button>
+
+                </form>
+            </div>
+
+            <div id="weatherInfo" class="col-9">
+                <div id="weatherHeading">
+                    <h1 id="currentDT">{{data.currentDT}}</h1>
+                    <h4><span class="bold">Current Temp: </span>{{#if data.currentTmp}} {{data.currentTmp}} ºC {{else}}
+                        N/A{{/if}}
+                    </h4>
+                    <h4><span class="bold">Pressure: </span>{{#if data.currentPress}} {{data.currentPress}} kPa
+                        {{else}}N/A{{/if}}
+                    </h4>
+                    <h4><span class="bold">Wind: </span>{{#if data.currentWnd}} {{data.currentWnd}} {{else}} N/A {{/if}}
+                    </h4>
+                </div>
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item test">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                            aria-controls="pills-home" aria-selected="true">Daily</a>
+                    </li>
+                    <li class="nav-item test">
+                        <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                            aria-controls="pills-profile" aria-selected="false">Hourly</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-daily-tab">
+                        <div id="weatherInfoContent">
+                            {{>forecastItem}}
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-hourly-tab">
+                        <div id="weatherInfoContent">
+                            {{>hourlyForecastItem}}
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</body>
+{{else}}
+
+<div id="backupMessageContainer">
+    <div id="errorMessageContainer">
+        <h1 id="errorHeading">Oops!</h1>
+        <h3>It seems that Environment Canada doesnt supply data for this region.<br> Try selecting another city nearby!
+        </h3>
+    </div>
+    <form method="GET" action="/" id="errorForm">
+        <button id="errorBtn" type="submit" class="btn btn-outline-primary">Back to Dashboard</button>
+
+    </form>
+</div>
+{{/if}}

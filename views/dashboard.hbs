@@ -1,0 +1,72 @@
+<div id="map"></div>
+<div id="sidePanelContainer">
+    <div id="sidePanelScroll">
+        {{>scrollMenuCity}}
+
+    </div>
+    <div id="scrollButtonDiv">
+        <button type="button" class="btn btn-primary button1" data-toggle="modal" data-target="#exampleModalCenter">
+            Add New Location
+        </button>
+    </div>
+</div>
+
+<div class="spinner-border text-primary" style="width: 5rem; height: 5rem;" role="status" id="spinner">
+    <span class="sr-only">Loading...</span>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                    New Location
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="/addCity" onsubmit="addMarker()" aria-orientation="">
+                <div class="modal-body" id="modal">
+                    <!-- MODAL BODY -->
+                    <div id="input">
+                        <input type="text" class="form-control" id="cityInput" aria-describedby="cityName"
+                            placeholder="City Name" name="city" />
+                    </div>
+                    <div class="input-group mb-3" id="input">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">Province</label>
+                        </div>
+                        <select class="custom-select" id="provinceInput" name="province">
+                            <option selected>Choose...</option>
+                            <option value="AB">AB</option>
+                            <option value="BC">BC</option>
+                            <option value="MB">MB</option>
+                            <option value="NB">NB</option>
+                            <option value="NL">NL</option>
+                            <option value="NS">NS</option>
+                            <option value="ON">ON</option>
+                            <option value="PEI">PEI</option>
+                            <option value="QC">QC</option>
+                            <option value="SK">SK</option>
+                            <option value="NWT">NWT</option>
+                            <option value="NU">NU</option>
+                            <option value="YT">YT</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        Save changes
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

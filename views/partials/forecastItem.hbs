@@ -1,0 +1,21 @@
+{{#each data.[daily]}}
+<div id="forecastItemContainer" class="container">
+    <div id="forecastItemTitle" class="row">
+        <h3 id="titleText">{{this.period}}</h3>
+    </div>
+    <div id="forecastItemBody">
+        <div class="row forecastItemInnerBody">
+            <div class="col">
+                <h5>{{this.text}}</h5>
+            </div>
+
+        </div>
+        <div class="row forecastItemInnerBody">
+            <div class="col">
+                <h5>{{this.wind}}</h5>
+            </div>
+        </div>
+    </div>
+
+</div>
+{{/each}}

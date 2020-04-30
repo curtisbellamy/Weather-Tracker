@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Tracker</title>
+
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/scrollMenuCity.css" />
+
+    {{#if forecastVisible}}
+    <link rel="stylesheet" type="text/css" href="/css/cityForecast.css" />
+    <link rel="stylesheet" type="text/css" href="/css/forecastItem.css" />
+    {{/if}}
+
+    {{#if dashboardVisible}}
+    <script src="/js/index.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA94Pe1czyW0kPdjvd04s3ukkDejTEK3QM&callback=initMap"
+        async defer></script>
+    {{/if}}
+
+    {{#if forecastVisible}}
+    <script src="/js/cityForecast.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA94Pe1czyW0kPdjvd04s3ukkDejTEK3QM&callback=initMap"
+        async defer></script>
+    {{/if}}
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    {{{body}}}
+</body>
+
+</html>

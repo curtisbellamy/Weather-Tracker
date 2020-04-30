@@ -1,0 +1,30 @@
+{{#each data.[hourly]}}
+<div id="forecastItemContainer" class="container">
+    <div id="forecastItemTitle" class="row">
+        <h3 id="titleText">{{this.period}}</h3>
+    </div>
+    <div id="forecastItemBody">
+        <div class="row forecastItemInnerBody">
+            <div class="col-9">
+                <h4>{{this.cond}}</h4>
+            </div>
+            <div class="col-3">
+                <h5 class="tempText">{{this.temps}} ºC</h5>
+            </div>
+        </div>
+        <div class="row forecastItemInnerBody">
+            <div class="col-9">
+                <h5>{{this.precip}}% chance of precipitation.</h5>
+
+            </div>
+        </div>
+        <div class="row forecastItemInnerBody">
+            <div class="col-9">
+                <h5>Wind: {{this.wnd}}</h5>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{{/each}}
